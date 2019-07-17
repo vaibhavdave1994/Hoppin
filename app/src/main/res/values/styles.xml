@@ -1,0 +1,191 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorWhite</item>
+        <item name="colorPrimaryDark">@color/colorWhite</item>
+        <item name="colorAccent">@color/colorGreen</item>
+    </style>
+
+
+    <!--Rubikmedium style-->
+    <style name="RubikMediumStyle26">
+        <item name="android:textSize">@dimen/_26ssp</item>
+        <item name="android:fontFamily">@font/rubikmedium</item>
+    </style>
+
+    <style name="RubikMediumStyleSize20">
+        <item name="android:textSize">@dimen/_20ssp</item>
+        <item name="android:fontFamily">@font/rubikmedium</item>
+    </style>
+
+    <style name="RubikMediumStyleSize18">
+        <item name="android:textSize">@dimen/_18ssp</item>
+        <item name="android:fontFamily">@font/rubikmedium</item>
+    </style>
+
+    <style name="RubikMediumStyleSize16">
+        <item name="android:textSize">@dimen/_16ssp</item>
+        <item name="android:fontFamily">@font/rubikmedium</item>
+    </style>
+
+    <style name="RubikMediumStyleSize14">
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:fontFamily">@font/rubikmedium</item>
+    </style>
+
+
+    <style name="RubikMediumStyleSize15">
+        <item name="android:textSize">@dimen/_15ssp</item>
+        <item name="android:fontFamily">@font/rubikmedium</item>
+    </style>
+
+    <style name="RubikMediumStyleSize10">
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:fontFamily">@font/rubikmedium</item>
+    </style>
+
+    <style name="RubikMediumStyleSize12">
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:fontFamily">@font/rubikmedium</item>
+    </style>
+
+    <style name="RubikMediumStyleSize11">
+        <item name="android:textSize">@dimen/_11ssp</item>
+        <item name="android:fontFamily">@font/rubikmedium</item>
+    </style>
+
+    <style name="RubikMediumStyleSize23">
+        <item name="android:textSize">@dimen/_23ssp</item>
+        <item name="android:fontFamily">@font/rubikmedium</item>
+    </style>
+
+
+    <!--Rubik-LightItalic style-->
+
+    <style name="RubikLightItalicStyle16">
+        <item name="android:textSize">@dimen/_16ssp</item>
+        <item name="android:fontFamily">@font/rubiklightitalic</item>
+    </style>
+
+    <style name="RubikLightItalicStyle14">
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:fontFamily">@font/rubiklightitalic</item>
+    </style>
+
+    <style name="RubikLightItalicStyle13">
+        <item name="android:textSize">@dimen/_13ssp</item>
+        <item name="android:fontFamily">@font/rubiklightitalic</item>
+    </style>
+    <!--Rubik-Regular style-->
+
+    <style name="RubikRegularStyle14">
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:fontFamily">@font/rubikregular</item>
+    </style>
+
+    <style name="RubikRegularStyle13">
+        <item name="android:textSize">@dimen/_13ssp</item>
+        <item name="android:fontFamily">@font/rubikregular</item>
+    </style>
+
+    <style name="RubikRegularStyle12">
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:fontFamily">@font/rubikregular</item>
+    </style>
+
+    <style name="RubikRegularStyle10">
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:fontFamily">@font/rubikregular</item>
+    </style>
+
+
+    <style name="RubikRegularStyleSize16">
+        <item name="android:textSize">@dimen/_16ssp</item>
+        <item name="android:fontFamily">@font/rubikregular</item>
+    </style>
+
+    <style name="RubikRegularStyleSize15">
+        <item name="android:textSize">@dimen/_15ssp</item>
+        <item name="android:fontFamily">@font/rubikregular</item>
+    </style>
+
+    <style name="RubikRegularStyleSize14">
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:fontFamily">@font/rubikregular</item>
+    </style>
+
+    <style name="RubikRegularStyleSize13">
+        <item name="android:textSize">@dimen/_13ssp</item>
+        <item name="android:fontFamily">@font/rubikregular</item>
+    </style>
+
+    <style name="RubikRegularStyleSize8">
+        <item name="android:textSize">@dimen/_8ssp</item>
+        <item name="android:fontFamily">@font/rubikregular</item>
+    </style>
+
+    <style name="RubikRegularStyleSize6">
+        <item name="android:textSize">@dimen/_6ssp</item>
+        <item name="android:fontFamily">@font/rubikregular</item>
+    </style>
+
+    <style name="RubikRegularStyleSize7">
+        <item name="android:textSize">@dimen/_7ssp</item>
+        <item name="android:fontFamily">@font/rubikregular</item>
+    </style>
+
+    <!--Rubik-Light-->
+    <style name="RubikLightStyleSize12">
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:textColor">@color/colorGray</item>
+        <item name="android:fontFamily">@font/rubiklight</item>
+    </style>
+
+    <style name="RubikLightStyleSize14">
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:textColor">@color/colorGray</item>
+        <item name="android:fontFamily">@font/rubiklight</item>
+    </style>
+
+    <style name="RubikLightStyleSize10">
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:textColor">@color/colorGray</item>
+        <item name="android:fontFamily">@font/rubiklight</item>
+    </style>
+
+    <style name="RubikLightStyleSize11">
+        <item name="android:textSize">@dimen/_11ssp</item>
+        <item name="android:textColor">@color/colorGray</item>
+        <item name="android:fontFamily">@font/rubiklight</item>
+    </style>
+
+    <style name="RubikLightStyleSize8">
+        <item name="android:textSize">@dimen/_8ssp</item>
+        <item name="android:textColor">@color/colorGray</item>
+        <item name="android:fontFamily">@font/rubiklight</item>
+    </style>
+
+    <style name="RubikLightStyleSize13">
+        <item name="android:textSize">@dimen/_13ssp</item>
+        <item name="android:fontFamily">@font/rubiklight</item>
+    </style>
+
+
+    <!--Rubik Bold-->
+    <style name="RubikBoldStyleSize18">
+        <item name="android:textSize">@dimen/_18ssp</item>
+        <item name="android:fontFamily">@font/rubikbold</item>
+    </style>
+
+
+    <style name="CustomBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomBottomSheetStyle</item>
+    </style>
+
+    <style name="CustomBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+</resources>

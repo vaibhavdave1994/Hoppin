@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWhite"
+    android:scrollbars="none"
+    tools:context=".activity.ui.authantication.hoopinstart.HoopinStartedActivity">
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       >
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_350sdp"
+            android:background="@color/colorWhite"
+            android:layout_marginBottom="5dp"/>
+        <android.support.design.widget.TabLayout
+            android:id="@+id/dots"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_gravity="center"
+            app:tabIndicatorHeight="0dp"
+            app:tabBackground="@drawable/dot_selector"
+           />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_signin"
+                style="@style/RubikRegularStyle14"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_gravity="center"
+                android:background="@drawable/app_btn"
+                android:gravity="center"
+                android:text="@string/sign_in"
+                android:textColor="@color/colorWhite" />
+
+            <Button
+                android:id="@+id/btn_signup"
+                style="@style/RubikRegularStyle14"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:background="@drawable/transperent_btn"
+                android:gravity="center"
+                android:text="@string/sign_up"
+                android:textColor="@color/colorGray1" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/logl1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="1dp"
+                android:background="@color/colorGray"
+                tools:ignore="RtlCompat" />
+
+            <TextView
+                style="@style/RubikLightItalicStyle13"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="@string/or"
+                android:textColor="@color/colorBlack1"
+                tools:ignore="RtlCompat" />
+
+
+            <View
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="1dp"
+                android:background="@color/colorGray"
+                tools:ignore="RtlCompat" />
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_facebook"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/_50sdp"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:background="@drawable/facebook_btn"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/ic_facebook" />
+
+                <TextView
+                    style="@style/RubikRegularStyleSize16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:text="@string/sign_in_with_facebook"
+                    android:textColor="@color/colorWhite" />
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

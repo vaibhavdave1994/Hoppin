@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/rl_privioushoop"
+    android:layout_height="wrap_content">
+
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/iv_hoopimage"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_85sdp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/party_image3"
+        app:riv_corner_radius="6dp" />
+
+
+    <TextView
+        android:id="@+id/tv_event"
+        style="@style/RubikMediumStyleSize12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:layout_toEndOf="@+id/iv_hoopimage"
+        android:text="Effortless Events"
+        android:textColor="@color/colorBlack1" />
+
+    <TextView
+        android:id="@+id/tv_date"
+        style="@style/RubikLightStyleSize10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_event"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_toEndOf="@+id/iv_hoopimage"
+        android:text="25/05/2019 05.30 PM"
+        android:textColor="@color/colorGray2" />
+
+    <TextView
+        android:id="@+id/tv_address"
+        style="@style/RubikLightStyleSize8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_date"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_toEndOf="@+id/iv_hoopimage"
+        android:text="69 West Bayport Dr. Absecon, NJ 08205"
+        android:textColor="@color/colorGray2" />
+
+
+    <RadioButton
+        android:id="@+id/radiobutton_privioushoop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@color/colorGreen"
+        android:buttonTint="@color/colorGreen"
+        android:layout_marginTop="@dimen/_17sdp"
+        android:clickable="false"
+         />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorLight1"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_below="@+id/iv_hoopimage"
+        />
+
+</RelativeLayout>

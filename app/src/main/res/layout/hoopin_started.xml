@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    android:scrollbars="none"
+    android:orientation="vertical"
+    >
+
+
+
+        <ImageView
+            android:layout_width="@dimen/_147sdp"
+            android:layout_height="@dimen/_125sdp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_70sdp"
+            android:src="@drawable/new_logo"
+            />
+
+        <TextView
+            style="@style/RubikMediumStyleSize20"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:text="@string/getting_started"
+            />
+
+        <TextView
+            style="@style/RubikLightItalicStyle14"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorGray"
+            android:gravity="center"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:text="@string/there_are_many_variation_of_passages_of_lorm_ipsum_available_but_the_majority_have_suffered"
+            />
+
+
+    </LinearLayout>
+
+
+
+

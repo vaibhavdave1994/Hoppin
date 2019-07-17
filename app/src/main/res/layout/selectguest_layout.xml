@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_privioushoop"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_hoopimage"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/party_image5"
+            app:riv_corner_radius="6dp" />
+
+
+        <TextView
+            android:id="@+id/tv_event"
+            style="@style/RubikMediumStyleSize12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@+id/iv_hoopimage"
+            android:text="Effortless Events"
+            android:textColor="@color/colorBlack1" />
+
+
+        <ImageView
+            android:id="@+id/check_guest"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_centerInParent="true"
+            android:tint="@color/colorGreen"
+            android:visibility="gone"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_alignParentEnd="true"
+            app:srcCompat="@drawable/ic_verified" />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/iv_hoopimage"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_toEndOf="@+id/iv_hoopimage"
+            android:background="@color/colorLight1" />
+
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/tv_sms"
+        style="@style/RubikRegularStyle14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="Invite By Sms"
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:textColor="@color/colorBlack1" />
+
+</LinearLayout>

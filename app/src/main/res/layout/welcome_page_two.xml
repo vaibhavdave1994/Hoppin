@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    >
+
+    <ImageView
+            android:layout_width="@dimen/_147sdp"
+            android:layout_height="@dimen/_142sdp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_60sdp"
+            android:src="@drawable/get_start_img2" />
+
+        <TextView
+            style="@style/RubikMediumStyleSize16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:text="@string/share_moments_together"
+            android:textColor="@color/colorBlack" />
+
+        <TextView
+            style="@style/RubikLightItalicStyle14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:gravity="center"
+            android:text="@string/to_create_a_hoop_a_host_will_have_to_provide_information_about_4_w"
+            android:textColor="@color/colorGray" />
+
+        <TextView
+            style="@style/RubikRegularStyleSize14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:text="@string/what_where_when_who"
+            android:textColor="@color/colorGray" />
+
+    <!--    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_inactive_dot_ico" />
+
+
+            <ImageView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:src="@drawable/ic_active_dot_img" />
+
+            <ImageView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:src="@drawable/ic_inactive_dot_ico" />
+
+            <ImageView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:src="@drawable/ic_inactive_dot_ico" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:orientation="horizontal">
+
+            <Button
+                style="@style/MediumRubikRegularStyle"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_gravity="center"
+                android:background="@drawable/app_btn"
+                android:gravity="center"
+                android:text="@string/sign_in"
+                android:textColor="@color/colorWhite" />
+
+            <Button
+                style="@style/MediumRubikRegularStyle"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:background="@drawable/transperent_btn"
+                android:gravity="center"
+                android:text="@string/sign_up"
+                android:textColor="@color/colorGray" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/logl1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="1dp"
+                android:background="@color/colorGray"
+                tools:ignore="RtlCompat" />
+
+            <TextView
+                style="@style/SmallRubikLightItalicStyle"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="@string/or"
+                android:textColor="@color/colorBlack1"
+                tools:ignore="RtlCompat" />
+
+
+            <View
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="1dp"
+                android:background="@color/colorGray"
+                tools:ignore="RtlCompat" />
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/facebook_btn"
+            android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_facebook" />
+
+            <TextView
+                style="@style/MediumRubikRegularStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="@string/sign_in_with_facebook"
+                android:textColor="@color/colorWhite" />
+
+
+        </LinearLayout>
+
+        </RelativeLayout>-->
+
+    </LinearLayout>
+
+

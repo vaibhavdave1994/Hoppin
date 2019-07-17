@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragment.createhoopfragment.WhatFragment">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <ImageView
+            android:id="@+id/iv_prograssBar_what"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="35dp"
+            android:src="@drawable/all_steps_1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:background="@drawable/card_login"
+            android:orientation="vertical">
+
+
+            <TextView
+                style="@style/RubikRegularStyleSize16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/what"
+                android:textColor="@color/colorBlack" />
+
+
+            <RelativeLayout
+                android:layout_width="@dimen/_123sdp"
+                android:layout_height="@dimen/_123sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_30sdp">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="@dimen/_123sdp"
+                    android:layout_height="@dimen/_122sdp"
+                    android:src="@color/colorWhite"
+                    app:civ_border_color="@color/colorBlack"
+                    app:civ_border_width="1dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:scaleType="fitXY" />
+
+
+                <ImageView
+                    android:id="@+id/upload"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    app:srcCompat="@drawable/ic_camera_ico" />
+
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:orientation="vertical"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginStart="@dimen/_15sdp">
+
+
+                <TextView
+                    style="@style/RubikLightStyleSize12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/title" />
+
+                <EditText
+                    style="@style/RubikLightStyleSize12"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:background="@drawable/editlayout"
+                    android:inputType="text" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/RubikLightStyleSize12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/description" />
+
+                    <TextView
+                        style="@style/RubikRegularStyleSize8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:text="@string/optional" />
+
+
+                </LinearLayout>
+
+
+
+                <EditText
+                    style="@style/RubikLightStyleSize12"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_height="@dimen/_55sdp"
+                    android:background="@drawable/editlayout"
+                    android:maxLines="5"
+                    android:imeOptions="actionNext"
+                    android:inputType="textMultiLine" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:orientation="horizontal">
+
+                <Button
+                    style="@style/RubikRegularStyle13"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/btnboardergreen"
+                    android:gravity="center"
+                    android:text="@string/copy_from_past_hoops"
+                    android:textColor="@color/colorGreen" />
+
+                <Button
+                    style="@style/RubikRegularStyle13"
+                    android:id="@+id/btn_next"
+                    android:layout_width="@dimen/_65sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:background="@drawable/app_btn"
+                    android:gravity="center"
+                    android:text="@string/next"
+                    android:textColor="@color/colorWhite" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+    </ScrollView>
