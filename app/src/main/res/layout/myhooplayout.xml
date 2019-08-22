@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/rl_privioushoop"
+    android:layout_height="wrap_content">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_hoopimage"
+        android:layout_width="@dimen/_85sdp"
+        android:layout_height="@dimen/_90sdp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/party_image3"
+        app:riv_corner_radius="6dp" />
+
+
+    <TextView
+        android:id="@+id/tv_event"
+        style="@style/RubikMediumStyleSize12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:layout_toEndOf="@+id/iv_hoopimage"
+        android:text="Effortless Events"
+        android:textColor="@color/colorBlack1" />
+
+    <TextView
+        android:id="@+id/tv_date"
+        style="@style/RubikLightStyleSize10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_event"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_toEndOf="@+id/iv_hoopimage"
+        android:text="25/05/2019 05.30 PM"
+        android:textColor="@color/colorGray2" />
+
+    <TextView
+        android:id="@+id/tv_address"
+        style="@style/RubikLightStyleSize8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_date"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_toEndOf="@+id/iv_hoopimage"
+        android:text="69 West Bayport Dr. Absecon, NJ 08205"
+        android:textColor="@color/colorGray2" />
+
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorLight1"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_below="@+id/tv_address"
+        />
+
+    <ImageView
+        android:id="@+id/iv_menu"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:background="@drawable/circlegray_lay"
+        android:layout_alignParentEnd="true"
+        app:srcCompat="@drawable/ic_menu"
+        android:scaleType="centerInside"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+
+        />
+
+</RelativeLayout>
