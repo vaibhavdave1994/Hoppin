@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context=".activity.ui.authantication.otpmessage.PhoneVarificationActivity">
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:id="@+id/rlheader"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp"
+            android:background="@color/colorWhite">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                app:srcCompat="@drawable/ic_arrow_pointing_to_right" />
+
+            <TextView
+                style="@style/RubikMediumStyleSize14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/verification_code"
+                android:textColor="@color/colorBlack1" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/colorLight" />
+
+
+        </RelativeLayout>
+
+
+        <TextView
+            style="@style/RubikBoldStyleSize18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:text="@string/enter_your"
+            android:textColor="@color/colorBlack" />
+
+        <TextView
+            style="@style/RubikBoldStyleSize18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:gravity="center"
+            android:text="@string/verification_code1"
+            android:textColor="@color/colorBlack" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                style="@style/RubikLightStyleSize14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/sent_to"
+                android:textColor="@color/colorGray" />
+
+
+            <TextView
+                android:id="@+id/tv_number"
+                style="@style/RubikLightStyleSize14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/sent_to"
+                android:textColor="@color/colorGray" />
+
+            <TextView
+                android:id="@+id/tv_edit"
+                style="@style/RubikLightStyleSize14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/edit"
+                android:textColor="@color/colorGreen" />
+        </LinearLayout>
+
+
+        <com.mukesh.OtpView
+            android:id="@+id/otp_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textColor="@android:color/black"
+            app:itemCount="6"
+            android:gravity="center"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            app:lineColor="@color/colorGreen"
+            app:viewType="line"
+            />
+
+
+        <!-- <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginEnd="@dimen/_10sdp"
+             android:layout_marginStart="@dimen/_10sdp"
+             android:layout_marginTop="@dimen/_20sdp"
+             android:orientation="horizontal">
+
+
+             <EditText
+                 android:id="@+id/code1"
+                 style="@style/RubikLightStyleSize12"
+                 android:layout_width="@dimen/_40sdp"
+                 android:layout_weight="1"
+                 android:gravity="center"
+                 android:maxLength="1"
+                 android:layout_height="wrap_content"
+                 android:inputType="number"
+
+                 />
+
+             <EditText
+                 android:id="@+id/code2"
+                 style="@style/RubikLightStyleSize12"
+                 android:layout_width="@dimen/_40sdp"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                 android:maxLength="1"
+                 android:gravity="center"
+                 android:layout_marginStart="@dimen/_10sdp"
+                 android:inputType="number"
+
+                 />
+
+             <EditText
+                 android:id="@+id/code3"
+                 style="@style/RubikLightStyleSize12"
+                 android:layout_width="@dimen/_40sdp"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                 android:maxLength="1"
+                 android:gravity="center"
+                 android:layout_marginStart="@dimen/_10sdp"
+                 android:inputType="number"
+
+                 />
+
+             <EditText
+                 android:id="@+id/code4"
+                 style="@style/RubikLightStyleSize12"
+                 android:layout_width="@dimen/_40sdp"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                 android:inputType="number"
+                 android:maxLength="1"
+                 android:gravity="center"
+                 android:layout_marginStart="@dimen/_10sdp"
+
+                 />
+
+             <EditText
+                 android:id="@+id/code5"
+                 style="@style/RubikLightStyleSize12"
+                 android:layout_width="@dimen/_40sdp"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                 android:maxLength="1"
+                 android:inputType="number"
+                 android:gravity="center"
+                 android:layout_marginStart="@dimen/_10sdp"
+
+                 />
+
+             <EditText
+                 android:id="@+id/code6"
+                 style="@style/RubikLightStyleSize12"
+                 android:layout_width="@dimen/_40sdp"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                 android:maxLength="1"
+                 android:inputType="number"
+                 android:gravity="center"
+                 android:layout_marginStart="@dimen/_10sdp"
+
+                 />
+
+         </LinearLayout>-->
+
+
+        <TextView
+            android:id="@+id/tv_errorcode"
+            style="@style/RubikLightStyleSize12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:visibility="gone"
+            android:text="@string/please_enter_code"
+            android:textColor="@color/colorRedError" />
+
+        <TextView
+            android:id="@+id/tv_getcode"
+            style="@style/RubikLightStyleSize14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="@string/didn_t_get_a_code"
+            android:textColor="@color/colorGreen" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/btn_send"
+        style="@style/RubikRegularStyle14"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:background="@drawable/button"
+        android:gravity="center"
+        android:text="@string/send"
+        android:textColor="@color/colorWhite" />
+
+
+</RelativeLayout>

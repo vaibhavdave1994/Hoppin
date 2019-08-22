@@ -10,9 +10,9 @@
     <RelativeLayout
         android:id="@+id/rlheader"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_45sdp"
+        android:layout_height="@dimen/_35sdp"
         android:background="@color/colorWhite"
-        >
+        tools:ignore="UnusedAttribute">
 
         <ImageView
             android:id="@+id/iv_back"
@@ -24,6 +24,7 @@
             />
 
         <TextView
+            android:id="@+id/tv_headername"
             style="@style/RubikMediumStyleSize14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -31,6 +32,7 @@
             android:text="@string/create_hoop"
             android:textColor="@color/colorBlack1" />
         <View
+            android:id="@+id/view"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:background="@color/colorLight"
@@ -61,7 +63,6 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
-            android:layout_marginTop="@dimen/_6sdp"
             android:background="@color/colorLight"
             />
 
@@ -69,8 +70,7 @@
         <LinearLayout
             android:id="@+id/linermain"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_60sdp"
-            android:elevation="10dp"
+            android:layout_height="@dimen/_34sdp"
             android:gravity="center_horizontal"
             android:orientation="horizontal"
             android:weightSum="5"
@@ -79,12 +79,12 @@
 
             <android.support.v7.widget.AppCompatImageView
                 android:id="@+id/img_one"
-                android:layout_width="@dimen/_40sdp"
-                android:layout_height="@dimen/_35sdp"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:paddingBottom="2dp"
-                android:paddingTop="5dp"
+                android:paddingBottom="3dp"
+                android:paddingTop="6dp"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/ic_inactive_event_ico"
                 tools:ignore="VectorDrawableCompat" />
@@ -92,34 +92,32 @@
 
             <android.support.v7.widget.AppCompatImageView
                 android:id="@+id/img_two"
-                android:layout_width="@dimen/_40sdp"
-                android:layout_height="@dimen/_35sdp"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:paddingBottom="2dp"
-                android:paddingTop="5dp"
+                android:paddingBottom="3dp"
+                android:paddingTop="6dp"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/ic_inactive_group_ico"
                 tools:ignore="VectorDrawableCompat" />
 
 
-            <android.support.v7.widget.AppCompatImageView
-                android:id="@+id/img_three"
-                android:layout_width="@dimen/_40sdp"
-                android:layout_height="@dimen/_58sdp"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/inactive_add_ico" />
+            <RelativeLayout
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_weight="1">
 
+            </RelativeLayout>
 
             <android.support.v7.widget.AppCompatImageView
                 android:id="@+id/img_four"
-                android:layout_width="@dimen/_40sdp"
-                android:layout_height="@dimen/_35sdp"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:paddingBottom="2dp"
-                android:paddingTop="8dp"
+                android:paddingBottom="3dp"
+                android:paddingTop="6dp"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/ic_inactive_notification_ico"
                 tools:ignore="VectorDrawableCompat" />
@@ -127,12 +125,12 @@
 
             <android.support.v7.widget.AppCompatImageView
                 android:id="@+id/img_five"
-                android:layout_width="@dimen/_40sdp"
-                android:layout_height="@dimen/_35sdp"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:paddingBottom="2dp"
-                android:paddingTop="8dp"
+                android:paddingBottom="3dp"
+                android:paddingTop="6dp"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/ic_inactive_profile_ico"
                 tools:ignore="VectorDrawableCompat" />
@@ -140,10 +138,30 @@
 
         </LinearLayout>
 
-
-
-
     </RelativeLayout>
 
+    <RelativeLayout
+        android:id="@+id/rl_imagethree"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+       >
+
+        <LinearLayout
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_centerInParent="true"
+            >
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/img_three"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_65sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:src="@drawable/active_add_ico" />
+    </RelativeLayout>
 
 </RelativeLayout>

@@ -14,7 +14,7 @@
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="@dimen/_43sdp"
             android:layout_height="@dimen/_43sdp"
-            android:src="@drawable/ic_party_image6" />
+            android:src="@drawable/layer" />
 
 
         <TextView
@@ -27,6 +27,31 @@
             android:textColor="@color/colorBlack1" />
 
 
+
     </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_ivcount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:visibility="gone"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="@dimen/_43sdp"
+            android:layout_height="@dimen/_43sdp"
+            android:src="@color/colorGreen" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+1"
+            android:textColor="@color/colorWhite"
+            android:layout_centerInParent="true"
+            />
+
+    </RelativeLayout>
+
 
 </LinearLayout>

@@ -6,16 +6,13 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.support.v4.app.Fragment
-import android.support.v7.app.AppCompatActivity
 import android.view.View
+import android.view.WindowManager
 import android.widget.Toast
 import com.hoppin.R
 import com.hoppin.base.BaseActivity
-import com.hoppin.fragment.*
+import com.hoppin.fragment.tabfragment.*
 import kotlinx.android.synthetic.main.activity_tab.*
-import android.graphics.Color.parseColor
-import android.view.WindowManager
-
 
 
 class TabActivity : BaseActivity(), View.OnClickListener {
@@ -38,21 +35,23 @@ class TabActivity : BaseActivity(), View.OnClickListener {
 
     fun inItView() {
 
-        if (lastClick != R.id.img_three) {
-            lastClick = R.id.img_three
+        if (lastClick != R.id.img_one) {
+            lastClick = R.id.img_one
             rlheader.visibility = View.VISIBLE
-            fragment = CreateHoopFragment()
-            displaySelectedFragment(fragment as CreateHoopFragment)
-            img_one.setImageResource(R.drawable.ic_inactive_event_ico)
+            view.visibility = View.GONE
+            tv_headername.setText(String.format("Hoopin"))
+            fragment = HoopinFragment()
+            displaySelectedFragment(fragment as HoopinFragment)
+            img_one.setImageResource(R.drawable.ic_active_event_ico)
             img_two.setImageResource(R.drawable.ic_inactive_group_ico)
-            img_three.setImageResource(R.drawable.active_add_ico)
+            img_three.setImageResource(R.drawable.inactive_add_ico)
             img_four.setImageResource(R.drawable.ic_inactive_notification_ico)
             img_five.setImageResource(R.drawable.ic_inactive_profile_ico)
             iv_back.visibility = View.GONE
         }
         img_one.setOnClickListener(this)
         img_two.setOnClickListener(this)
-        img_three.setOnClickListener(this)
+        rl_imagethree.setOnClickListener(this)
         img_four.setOnClickListener(this)
         img_five.setOnClickListener(this)
 
@@ -69,11 +68,13 @@ class TabActivity : BaseActivity(), View.OnClickListener {
                 if (lastClick != R.id.img_one) {
                     lastClick = R.id.img_one
                     rlheader.visibility = View.VISIBLE
+                    view.visibility = View.GONE
                     fragment = HoopinFragment()
+                    tv_headername.setText(String.format("Hoopin"))
                     displaySelectedFragment(fragment as HoopinFragment)
                     updateTabView(R.id.img_one)
                     iv_back.visibility = View.GONE
-                    rlheader.visibility = View.GONE
+                    view.visibility = View.GONE
 
 
                 }
@@ -83,24 +84,28 @@ class TabActivity : BaseActivity(), View.OnClickListener {
 
                 if (lastClick != R.id.img_two) {
                     lastClick = R.id.img_two
+                    view.visibility = View.VISIBLE
                     fragment = HoopinCircleFragment()
+                    tv_headername.setText(String.format("Hoopin Circle"))
                     displaySelectedFragment(fragment as HoopinCircleFragment)
                     updateTabView(R.id.img_two)
                     iv_back.visibility = View.GONE
-                    rlheader.visibility = View.GONE
+                    rlheader.visibility = View.VISIBLE
 
 
                 }
             }
 
-            R.id.img_three -> {
+            R.id.rl_imagethree -> {
 
-                if (lastClick != R.id.img_three) {
-                    lastClick = R.id.img_three
+                if (lastClick != R.id.rl_imagethree) {
+                    lastClick = R.id.rl_imagethree
                     rlheader.visibility = View.VISIBLE
+                    view.visibility = View.VISIBLE
+                    tv_headername.setText(String.format("Create Hoopin"))
                     fragment = CreateHoopFragment()
                     displaySelectedFragment(fragment as CreateHoopFragment)
-                    updateTabView(R.id.img_three)
+                    updateTabView(R.id.rl_imagethree)
                     iv_back.visibility = View.GONE
 
                 }
@@ -110,7 +115,8 @@ class TabActivity : BaseActivity(), View.OnClickListener {
                 if (lastClick != R.id.img_four) {
                     lastClick = R.id.img_four
                     rlheader.visibility = View.VISIBLE
-                    rlheader.visibility = View.GONE
+                    view.visibility = View.VISIBLE
+                    tv_headername.setText(String.format("Notification"))
                     fragment = NotificationFragment()
                     displaySelectedFragment(fragment as NotificationFragment)
                     updateTabView(R.id.img_four)
@@ -127,7 +133,6 @@ class TabActivity : BaseActivity(), View.OnClickListener {
                     displaySelectedFragment(fragment as ProfileFragment)
                     updateTabView(R.id.img_five)
                     iv_back.visibility = View.GONE
-
 
 
                 }
@@ -154,7 +159,7 @@ class TabActivity : BaseActivity(), View.OnClickListener {
                 img_five.setImageResource(R.drawable.ic_inactive_profile_ico)
 
             }
-            R.id.img_three -> {
+            R.id.rl_imagethree -> {
                 img_one.setImageResource(R.drawable.ic_inactive_event_ico)
                 img_two.setImageResource(R.drawable.ic_inactive_group_ico)
                 img_three.setImageResource(R.drawable.active_add_ico)
@@ -199,13 +204,9 @@ class TabActivity : BaseActivity(), View.OnClickListener {
         if (i > 0) {
             fm.popBackStack()
         } else if (!doubleBackToExitPressedOnce) {
-
             doubleBackToExitPressedOnce = true
             Toast.makeText(this, "Click again to exit", Toast.LENGTH_SHORT).show()
-            //            MySnackBar.showSnackbar(this, findViewById(R.id.lyCoordinatorLayout), "Click again to exit");
-
             handler.postDelayed({ doubleBackToExitPressedOnce = false }, 2000)
-
         } else {
             handler.removeCallbacks(runnable)
             finishAffinity()

@@ -27,7 +27,7 @@ class ImagePickerDialog : BaseBottomSheetDialog(), View.OnClickListener {
 
         rl_camera.setOnClickListener(this)
         rl_gallery.setOnClickListener(this)
-        tv_cancel.setOnClickListener(this)
+        rl_cancel.setOnClickListener(this)
     }
 
 
@@ -68,7 +68,7 @@ class ImagePickerDialog : BaseBottomSheetDialog(), View.OnClickListener {
                 callBack?.textOnClick("Gallery")
                 dismiss()
             }
-            R.id.tv_cancel -> {
+            R.id.rl_cancel -> {
                 dismiss()
             }
         }

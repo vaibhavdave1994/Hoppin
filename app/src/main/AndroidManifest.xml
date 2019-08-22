@@ -1,19 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.hoppin">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <uses-feature
+        android:name="android.hardware.camera.any"
+        android:required="true" />
 
     <application
         android:name=".Hoopin"
         android:allowBackup="true"
         android:icon="@drawable/hoopin_android"
         android:label="@string/app_name"
+        android:usesCleartextTraffic="true"
         android:roundIcon="@drawable/hoopin_android"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:ignore="UnusedAttribute">
+
+
         <activity android:name=".MainActivity" />
         <activity
             android:name=".activity.SplashScreenActivity"
@@ -26,32 +37,54 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver
+            android:name=".activity.ui.authantication.otpmessage.SMSReceiver"
+            android:exported="true"
+            tools:ignore="ExportedReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.auth.api.phone.SMS_RETRIEVED" />
+            </intent-filter>
+        </receiver>
+
+
+        <!-- Firebase Notifications -->
+        <service android:name=".supportnotification.service.MyFirebaseMessagingService"
+            tools:ignore="ExportedService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <!-- ./Firebase Notifications -->
+
         <activity
             android:name=".activity.ui.authantication.login.LoginActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan|stateHidden|adjustResize" />
+            android:windowSoftInputMode="stateHidden|adjustResize|stateAlwaysHidden" />
         <activity
             android:name=".activity.ui.authantication.hoopinstart.HoopinStartedActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity android:name=".base.BaseActivity" />
-        <activity android:name=".activity.ui.authantication.signup.SignUpActivity"
+        <activity
+            android:name=".activity.ui.authantication.signup.SignUpActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
-            android:windowSoftInputMode="adjustPan|stateHidden|adjustResize"
-            />
+            android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
             android:name=".activity.ui.tabactivity.TabActivity"
-            android:windowSoftInputMode="adjustPan|stateHidden|adjustResize" />
-        <activity android:name=".activity.ui.authantication.forgetpassword.ForgetPasswordActivity"
+            android:windowSoftInputMode="adjustPan|adjustResize" />
+        <activity
+            android:name=".activity.ui.authantication.forgetpassword.ForgetPasswordActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
-            android:windowSoftInputMode="adjustPan|stateHidden"/>
-        <activity android:name=".activity.ui.authantication.allprofileactivity.EditProfileActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".activity.ui.authantication.allprofileactivity.EditProfileActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
-            android:windowSoftInputMode="adjustPan|stateHidden"/>
+            android:windowSoftInputMode="adjustPan|stateHidden" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -64,23 +97,50 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity android:name=".activity.hoopActivity.PreviousCreateHoopActivity"
+        <activity
+            android:name=".activity.hoopActivity.PreviousCreateHoopActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
-            android:windowSoftInputMode="adjustPan|stateHidden">
-        </activity>
-        <activity android:name=".activity.hoopActivity.HoopDetailActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".activity.hoopActivity.HoopDetailActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
-            android:windowSoftInputMode="adjustPan|stateHidden">
-        </activity>
-        <activity android:name=".activity.ui.authantication.forgetpassword.RecoverPasswordActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".activity.ui.authantication.forgetpassword.RecoverPasswordActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".activity.hoopActivity.SelcetGuestActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".activity.hoopinActivity.DetailRequestActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".activity.hoopActivity.GuestinvitedActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".activity.ui.authantication.otpmessage.PhoneVarificationActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan|stateHidden">
 
         </activity>
-        <activity android:name=".activity.hoopActivity.SelcetGuestActivity"
+        <activity
+            android:name=".activity.countrycodepicker.CountrySelectionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".activity.hoopActivity.HoopMemoryActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan|stateHidden">

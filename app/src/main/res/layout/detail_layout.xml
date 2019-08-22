@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.hoopActivity.HoopDetailActivity">
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="-10dp"
+                    android:layout_below="@+id/image"
+                    android:background="@drawable/detail_image"
+                    android:orientation="horizontal">
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/RubikMediumStyleSize10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/start_date"
+                            android:textColor="@color/colorBlack1"
+                            tools:ignore="RtlCompat" />
+
+                        <TextView
+                            style="@style/RubikLightStyleSize10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:gravity="center"
+                            android:text="25 May 2019, 03:50 PM"
+                            android:textColor="@color/colorGray"
+                            tools:ignore="RtlCompat" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_gravity="center"
+                        android:background="@color/colorLight2" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/RubikMediumStyleSize10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/end_date"
+                            android:textColor="@color/colorBlack1"
+                            tools:ignore="RtlCompat" />
+
+                        <TextView
+                            style="@style/RubikLightStyleSize10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:gravity="center"
+                            android:text="25 May 2019, 03:50 PM"
+                            android:textColor="@color/colorGray"
+                            tools:ignore="RtlCompat" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+                <RelativeLayout
+                    android:id="@+id/image"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_220sdp">
+
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_220sdp"
+                        android:background="@drawable/gradiant"/>
+
+                    <com.hoppin.helper.RoundUpperCornerImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_220sdp"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/ic_party_image6" />
+
+
+
+
+                    <LinearLayout
+                        android:id="@+id/li_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="@dimen/_20sdp"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/_12sdp"
+                            android:layout_height="@dimen/_12sdp"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/ic_placeholder" />
+
+                        <TextView
+                            style="@style/RubikLightItalicStyle13"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:text="7202 State Lane Bethesda, MD 20814"
+                            android:textColor="@color/colorWhite"
+                            tools:ignore="RtlCompat" />
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        style="@style/RubikBoldStyleSize18"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/li_address"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:text="Birthday Party Celebration"
+                        android:textColor="@color/colorWhite"
+                        tools:ignore="RtlCompat" />
+
+                </RelativeLayout>
+
+
+
+            </RelativeLayout>
+
+
+            <TextView
+                style="@style/RubikMediumStyleSize10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="@string/guest_invited"
+                android:textColor="@color/colorBlack1"
+                tools:ignore="RtlCompat" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal"
+                android:scrollbars="none" />
+
+
+            <TextView
+                style="@style/RubikMediumStyleSize10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="@string/description1"
+                android:textColor="@color/colorBlack1"
+                tools:ignore="RtlCompat" />
+
+            <TextView
+                android:id="@+id/tv_description"
+                style="@style/RubikLightStyleSize10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:gravity="start"
+                android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard..See More"
+                android:textColor="@color/colorGray"
+                tools:ignore="RtlCompat" />
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+</RelativeLayout>
+
+
+
+
+    <!--  <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:orientation="horizontal">
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            style="@style/RubikLightStyleSize10"
+                            android:layout_width="@dimen/_55sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:background="@drawable/start_corner"
+                            android:gravity="center"
+                            android:text="@string/edit"
+                            android:textColor="@color/colorWhite"
+                            tools:ignore="RtlCompat" />
+
+                        <RelativeLayout
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:background="@drawable/end_corner">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:tint="@color/colorWhite"
+                                app:srcCompat="@drawable/ic_edit" />
+
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            style="@style/RubikLightStyleSize10"
+                            android:layout_width="@dimen/_55sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:background="@drawable/start_corner"
+                            android:backgroundTint="@color/colorRed"
+                            android:gravity="center"
+                            android:text="@string/cancel1"
+                            android:textColor="@color/colorWhite"
+                            tools:ignore="RtlCompat,UnusedAttribute" />
+
+                        <RelativeLayout
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:background="@drawable/end_corner"
+                            android:backgroundTint="@color/colorDarkRed"
+                            tools:ignore="UnusedAttribute">
+
+                            <ImageView
+                                android:layout_width="@dimen/_12sdp"
+                                android:layout_height="@dimen/_12sdp"
+                                android:layout_centerInParent="true"
+                                android:tint="@color/colorWhite"
+                                app:srcCompat="@drawable/ic_error" />
+
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/rl_share"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            style="@style/RubikLightStyleSize10"
+                            android:layout_width="@dimen/_55sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:background="@drawable/start_corner"
+                            android:backgroundTint="@color/colorOrange"
+                            android:gravity="center"
+                            android:text="@string/share"
+                            android:textColor="@color/colorWhite"
+                            tools:ignore="RtlCompat,UnusedAttribute" />
+
+                        <RelativeLayout
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:background="@drawable/end_corner"
+                            android:backgroundTint="@color/colorDarkOrange1"
+                            tools:ignore="UnusedAttribute">
+
+                            <ImageView
+                                android:layout_width="@dimen/_12sdp"
+                                android:layout_height="@dimen/_12sdp"
+                                android:layout_centerInParent="true"
+                                android:tint="@color/colorWhite"
+                                app:srcCompat="@drawable/ic_share" />
+
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+                </LinearLayout>-->

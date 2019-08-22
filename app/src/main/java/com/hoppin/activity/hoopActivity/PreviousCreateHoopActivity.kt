@@ -1,6 +1,8 @@
 package com.hoppin.activity.hoopActivity
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.support.v4.content.ContextCompat
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import com.hoppin.R
@@ -21,7 +23,9 @@ class PreviousCreateHoopActivity : BaseActivity(), View.OnClickListener {
         adapterData()
     }
 
+    @SuppressLint("NewApi")
     fun inItView() {
+        window.setStatusBarColor(ContextCompat.getColor(this, R.color.colorWhite));
         iv_back.setOnClickListener(this)
         btn_done.setOnClickListener(this)
         arrayList = ArrayList()

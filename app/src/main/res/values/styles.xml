@@ -1,13 +1,21 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorWhite</item>
-        <item name="colorPrimaryDark">@color/colorWhite</item>
+        <!--<item name="colorPrimary">@color/colorWhite</item>
+        <item name="colorPrimaryDark">@color/colorWhite</item>-->
+        <item name="colorPrimary">@color/colorGreen</item>
+        <item name="colorPrimaryDark">@color/colorGreen</item>
         <item name="colorAccent">@color/colorGreen</item>
+        <item name="otpViewStyle">@style/OtpWidget.OtpView</item>
     </style>
 
+    <!--error style-->
+    <style name="error_appearance" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/colorRedError</item>
+        <item name="android:textSize">12sp</item>
+    </style>
 
     <!--Rubikmedium style-->
     <style name="RubikMediumStyle26">
@@ -126,6 +134,11 @@
         <item name="android:fontFamily">@font/rubikregular</item>
     </style>
 
+    <style name="RubikRegularStyleSize10">
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:fontFamily">@font/rubikregular</item>
+    </style>
+
     <style name="RubikRegularStyleSize6">
         <item name="android:textSize">@dimen/_6ssp</item>
         <item name="android:fontFamily">@font/rubikregular</item>
@@ -188,4 +201,18 @@
         <item name="android:background">@android:color/transparent</item>
     </style>
 
+    <style name="MyTabLayoutTextAppearance" parent="TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">
+    <item name="android:textSize">@dimen/_11ssp</item>
+    <item name="android:fontFamily" tools:ignore="NewApi">@font/rubikregular</item>
+    </style>
+
+    <!-- SwitchDateTime style is independent, each element is optional-->
+    <!-- Year Precise -->
+    <style name="Theme.SwitchDateTime.DateLabelYear">
+
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:fontFamily">@font/rubikbold</item>
+
+    </style>
 </resources>

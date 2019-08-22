@@ -1,83 +1,179 @@
 package com.hoppin.helper
 
 import android.content.Context
+import android.support.design.widget.TextInputLayout
+import android.support.v4.content.ContextCompat
+import android.view.View
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.hoppin.R
+import kotlinx.android.synthetic.main.activity_sign_up.*
+import java.util.regex.Pattern
 
 /**
  * Created by Ravi Birla on 08,July,2019
  */
 class Validation(private val context: Context) {
 
-    private fun getString(editText: EditText): String {
-        return editText.text.toString()
-    }
+    var EMAIL_STRING = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"
+    var PASS_STRING = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$"
 
 
-    //New Code
-    fun isFirstNameValid(editText: EditText): Boolean {
-        if (getString(editText).isEmpty()) {
-            Toast.makeText(context, context.getString(R.string.firstNameEmptyError), Toast.LENGTH_SHORT).show()
+    fun checkEmail(editText: EditText, inputEditText: TextInputLayout): Boolean {
+        if (editText.text.toString().isEmpty()) {
+            inputEditText.isErrorEnabled = true
+
+            inputEditText.setError(context.getString(R.string.emailEmptyError))
             return false
-        } else if (editText.length() < 3) {
-            Toast.makeText(context, context.getString(R.string.firstNameLengthError), Toast.LENGTH_SHORT).show()
 
-            return false
-        } else {
-            return true
-        }
-    }
+        } else if (!Pattern.compile(EMAIL_STRING).matcher(editText.text.toString()).matches()) {
+            inputEditText.isErrorEnabled = true
 
-    fun isLastNameValid(editText: EditText): Boolean {
-        if (getString(editText).isEmpty()) {
-            Toast.makeText(context, context.getString(R.string.lastNameEmptyError), Toast.LENGTH_SHORT).show()
-            return false
-        } else if (editText.length() < 3) {
-            Toast.makeText(context, context.getString(R.string.lastNameLengthError), Toast.LENGTH_SHORT).show()
-
+            inputEditText.setError(context.getString(R.string.emailInvalidError))
             return false
         } else {
+            inputEditText.isErrorEnabled = false
+
+            inputEditText.setError("")
             return true
         }
     }
 
-    fun isEmailValid(editText: EditText): Boolean {
-        if (getString(editText).isEmpty()) {
-            Toast.makeText(context, context.getString(R.string.emailEmptyError), Toast.LENGTH_SHORT).show()
+    fun checkPassword(editText: EditText, inputEditText: TextInputLayout): Boolean {
+        if (editText.text.toString().isEmpty()) {
+            inputEditText.isErrorEnabled = true
+            inputEditText.setError(context.getString(R.string.passEmptyError))
             return false
         } else {
-            val bool = android.util.Patterns.EMAIL_ADDRESS.matcher(getString(editText)).matches()
-            if (!bool) {
-                Toast.makeText(context, context.getString(R.string.emailInvalidError), Toast.LENGTH_SHORT).show()
-            }
-            return bool
+            inputEditText.isErrorEnabled = false
+            inputEditText.setError("")
+            return true
         }
     }
-
-    fun isPasswordValid(editText: EditText): Boolean {
-        if (getString(editText).isEmpty()) {
-            editText.requestFocus()
-            Toast.makeText(context, context.getString(R.string.passEmptyError), Toast.LENGTH_SHORT).show()
-
+ fun checkPassword1(editText: EditText, inputEditText: TextInputLayout): Boolean {
+        if (editText.text.toString().isEmpty()) {
+            inputEditText.isErrorEnabled = true
+            inputEditText.setError(context.getString(R.string.passEmptyError))
             return false
-        }/* else if (editText.text.length >= 6) {
-            editText.requestFocus()
-            return true
-        }*/ else {
-            editText.requestFocus()
-            return true
-        }
-    }
-
-    fun isPhoneNumberValid(editText: EditText): Boolean {
-        if (getString(editText).isEmpty()) {
-            Toast.makeText(context, context.getString(R.string.lastNameEmptyError), Toast.LENGTH_SHORT).show()
+        }else if (!Pattern.compile(PASS_STRING).matcher(editText.text).matches()) {
+            inputEditText.isErrorEnabled = true
+            inputEditText.setError(context.getString(R.string.passlenthError))
             return false
-        }  else {
+        }
+        else {
+            inputEditText.isErrorEnabled = false
+            inputEditText.setError("")
             return true
         }
     }
 
+    fun checkMobile(editText: EditText, view: View, text: TextView): Boolean {
+        if (editText.text.toString().isEmpty()) {
 
+            view.setBackgroundColor(ContextCompat.getColor(context,R.color.colorRedError))
+            text.visibility = View.VISIBLE
+            return false
+        } else {
+            view.setBackgroundColor(ContextCompat.getColor(context,R.color.colorLight))
+            text.visibility = View.GONE
+            return true
+        }
+
+    }
+
+    fun checkFirstName(editText: EditText, inputEditText: TextInputLayout): Boolean {
+        if (editText.text.toString().isEmpty()) {
+            inputEditText.isErrorEnabled = true
+            inputEditText.setError(context.getString(R.string.firstNameEmptyError))
+            return false
+        } else {
+            inputEditText.isErrorEnabled = false
+            inputEditText.setError("")
+            return true
+        }
+
+    }
+
+    fun checkLastName(editText: EditText, inputEditText: TextInputLayout): Boolean {
+        if (editText.text.toString().isEmpty()) {
+
+            inputEditText.isErrorEnabled = true
+            inputEditText.setError(context.getString(R.string.lastNameEmptyError))
+            return false
+        } else {
+            inputEditText.isErrorEnabled = false
+            inputEditText.setError("")
+            return true
+        }
+
+    }
+
+    fun checkTitle(editText: EditText,text: TextView): Boolean {
+        if (editText.text.toString().isEmpty()) {
+            text.visibility = View.VISIBLE
+            return false
+        } else {
+            text.visibility = View.GONE
+            return true
+        }
+
+    }
+
+
+
+    fun checkLoction(editText: EditText,text: TextView): Boolean {
+        if (editText.text.toString().isEmpty()) {
+            text.visibility = View.VISIBLE
+            return false
+        } else {
+            text.visibility = View.GONE
+            return true
+        }
+
+    }
+
+    fun checkStartDate(editText: TextView,text: TextView): Boolean {
+        if (editText.text.toString().isEmpty()) {
+            text.visibility = View.VISIBLE
+            return false
+        } else {
+            text.visibility = View.GONE
+            return true
+        }
+
+    }
+
+
+    fun checkCode(editText: TextView,text: TextView): Boolean {
+        if (editText.text.toString().isEmpty() ) {
+            text.visibility = View.VISIBLE
+            return false
+        }
+        else if (editText.text.toString().length == 1  ) {
+            text.visibility = View.VISIBLE
+            return false
+        }
+        else if (editText.text.toString().length == 2  ) {
+            text.visibility = View.VISIBLE
+            return false
+        }
+        else if (editText.text.toString().length == 3  ) {
+            text.visibility = View.VISIBLE
+            return false
+        }
+        else if (editText.text.toString().length == 4  ) {
+            text.visibility = View.VISIBLE
+            return false
+        }
+        else if (editText.text.toString().length == 5  ) {
+            text.visibility = View.VISIBLE
+            return false
+        }
+        else {
+            text.visibility = View.GONE
+            return true
+        }
+
+    }
 }

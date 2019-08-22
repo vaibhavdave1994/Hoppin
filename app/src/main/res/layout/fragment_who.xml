@@ -6,7 +6,7 @@
     android:background="@color/colorWhite"
     android:orientation="vertical"
     android:scrollbars="none"
-    tools:context=".fragment.createhoopfragment.WhatFragment">
+    >
 
     <LinearLayout
         android:layout_width="wrap_content"

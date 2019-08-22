@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/colorGreen"
-    tools:context=".fragment.ProfileFragment">
+    tools:context=".fragment.tabfragment.ProfileFragment">
 
 
     <TextView
@@ -403,7 +403,7 @@
                         android:layout_marginEnd="@dimen/_15sdp"
                         android:layout_marginStart="@dimen/_15sdp"
                         android:layout_marginTop="@dimen/_30sdp"
-                        android:background="@drawable/app_btn"
+                        android:background="@drawable/button"
                         android:gravity="center"
                         android:text="@string/logout"
                         android:textColor="@color/colorWhite" />

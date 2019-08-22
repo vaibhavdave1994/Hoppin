@@ -1,16 +1,23 @@
 package com.hoppin.base
 
+import android.Manifest
+import android.annotation.TargetApi
 import android.app.Activity
 import android.app.AlertDialog
 import android.app.ProgressDialog
+import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.SystemClock
 import android.provider.MediaStore
+import android.support.v4.app.ActivityCompat
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
+import android.support.v4.content.ContextCompat
 import android.support.v4.content.FileProvider
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
@@ -25,7 +32,7 @@ import java.util.*
 /**
  * Created by Ravi Birla on 26,June,2019
  */
-open class BaseActivity : AppCompatActivity(), ImagePickerDialog.ImagePickerCallBack {
+open class BaseActivity : AppCompatActivity(), ImagePickerDialog.ImagePickerCallBack, HoopPickerDialog.HoopPickerCallBack {
 
 
     var tmpUri: Uri? = null
@@ -158,6 +165,7 @@ open class BaseActivity : AppCompatActivity(), ImagePickerDialog.ImagePickerCall
     }
 
 
+
     override fun textOnClick(type: String) {
         if (type.equals("Camera")) {
             val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
@@ -216,4 +224,11 @@ open class BaseActivity : AppCompatActivity(), ImagePickerDialog.ImagePickerCall
 
         }
     }
+
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+    }
+
+
 }

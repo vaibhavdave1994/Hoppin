@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "52128343663",
+    "firebase_url": "https://hoopin-9657e.firebaseio.com",
+    "project_id": "hoopin-9657e",
+    "storage_bucket": "hoopin-9657e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:52128343663:android:67187343798dfdb2",
+        "android_client_info": {
+          "package_name": "com.hoppin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "52128343663-ovlo8do11cfcqfrfm0dca4qatp4ho98m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqgEvcVV9i1li0FFVk4iF83xbH40-QK2w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "52128343663-ovlo8do11cfcqfrfm0dca4qatp4ho98m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

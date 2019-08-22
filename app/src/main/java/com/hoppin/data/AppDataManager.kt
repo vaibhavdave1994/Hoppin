@@ -3,6 +3,7 @@ package com.hoppin.data
 import android.app.Activity
 import android.content.Context
 import com.hoppin.data.local.AppPreferencesHelper
+import com.hoppin.data.model.LoginInfo
 import com.hoppin.data.model.UserInfoBean
 import com.hoppin.data.remote.AppApiHelper
 
@@ -72,6 +73,15 @@ class AppDataManager(context: Context) : DataManager {
 
     override fun setUserInfo(userInfo: UserInfoBean) {
         instancePref?.setUserInfo(userInfo)
+    }
+
+    override fun setLoginInfo(userInfo: LoginInfo) {
+        instancePref?.setLoginInfo(userInfo)
+
+    }
+
+    override fun getLoginInfo(): LoginInfo {
+        return instancePref!!.getLoginInfo()
     }
 
     /* override fun singleJobCreate(param: HashMap<String, String>): ANRequest<out ANRequest<*>>? {

@@ -1,7 +1,9 @@
 package com.hoppin.activity.ui.authantication.forgetpassword
 
+import android.annotation.SuppressLint
 import android.os.Build
 import android.os.Bundle
+import android.support.v4.content.ContextCompat
 import android.view.View
 import com.hoppin.R
 import com.hoppin.base.BaseActivity
@@ -19,7 +21,9 @@ class ForgetPasswordActivity : BaseActivity(), View.OnClickListener {
         inItView()
     }
 
+    @SuppressLint("NewApi")
     fun inItView() {
+        window.setStatusBarColor(ContextCompat.getColor(this,R.color.colorWhite));
         iv_back.setOnClickListener(this)
 
     }

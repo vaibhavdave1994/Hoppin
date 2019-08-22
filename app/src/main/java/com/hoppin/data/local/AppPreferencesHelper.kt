@@ -5,8 +5,9 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import com.hoppin.activity.ui.authantication.login.LoginActivity
+import com.hoppin.data.model.LoginInfo
 import com.hoppin.data.model.UserInfoBean
-import java.util.HashMap
+import java.util.*
 
 class AppPreferencesHelper(context: Context) : PreferencesHelper {
 
@@ -18,23 +19,27 @@ class AppPreferencesHelper(context: Context) : PreferencesHelper {
     private val PREF_KEY_APP_REM_PWD = "PREF_KEY_APP_REM_PWD"
     private val PREF_KEY_AUTH_TOKEN = "PREF_KEY_AUTH_TOKEN"
 
+    //login user
+    private val PREF_KEY_APP_REFRESH_TOKEN = "PREF_KEY_APP_REFRESH_TOKEN"
+    private val PREF_KEY_APP_ACCESS_TOKEN = "PREF_KEY_APP_ACCESS_TOKEN"
+
 
     //User info
     private val PREF_KEY_APP_IS_ADMIN = "PREF_KEY_APP_IS_ADMIN"
     private val PREF_KEY_APP_CUSTOMER_ID = "PREF_KEY_APP_CUSTOMER_ID"
     private val PREF_KEY_APP_CUSTOMER_PROFILE_IMAGE = "PREF_KEY_APP_CUSTOMER_PROFILE_IMAGE"
-    private val PREF_KEY_APP_CUSTOMER_AUTH_TOKEN   = "PREF_KEY_APP_CUSTOMER_AUTH_TOKEN"
-    private val PREF_KEY_APP_CUSTOMER_EMAIL_VARIFIED   = "PREF_KEY_APP_CUSTOMER_EMAIL_VARIFIED"
-    private val PREF_KEY_APP_CUSTOMER_STATUS   = "PREF_KEY_APP_CUSTOMER_STATUS"
-    private val PREF_KEY_APP_CUSTOMER_NOTIFICATION   = "PREF_KEY_APP_CUSTOMER_NOTIFICATION"
-    private val PREF_KEY_APP_CUSTOMER_FULL_NAME   = "PREF_KEY_APP_CUSTOMER_FULL_NAME"
-    private val PREF_KEY_APP_CUSTOMER_WEIGHT   = "PREF_KEY_APP_CUSTOMER_WEIGHT"
-    private val PREF_KEY_APP_CUSTOMER_HEIGHT   = "PREF_KEY_APP_CUSTOMER_HEIGHT"
-    private val PREF_KEY_APP_CUSTOMER_MOBILE_NUMBER   = "PREF_KEY_APP_CUSTOMER_MOBILE_NUMBER"
-    private val PREF_KEY_APP_CUSTOMER_GENDER   = "PREF_KEY_APP_CUSTOMER_GENDER"
-    private val PREF_KEY_APP_CUSTOMER_EMAIL   = "PREF_KEY_APP_CUSTOMER_EMAIL"
-    private val PREF_KEY_APP_CUSTOMER_SOCIAL_NETWORK   = "PREF_KEY_APP_CUSTOMER_SOCIAL_NETWORK"
-    private val PREF_KEY_APP_CUSTOMER_SOCIAL_NETWORK_ID   = "PREF_KEY_APP_CUSTOMER_SOCIAL_NETWORK_ID"
+    private val PREF_KEY_APP_CUSTOMER_AUTH_TOKEN = "PREF_KEY_APP_CUSTOMER_AUTH_TOKEN"
+    private val PREF_KEY_APP_CUSTOMER_EMAIL_VARIFIED = "PREF_KEY_APP_CUSTOMER_EMAIL_VARIFIED"
+    private val PREF_KEY_APP_CUSTOMER_STATUS = "PREF_KEY_APP_CUSTOMER_STATUS"
+    private val PREF_KEY_APP_CUSTOMER_NOTIFICATION = "PREF_KEY_APP_CUSTOMER_NOTIFICATION"
+    private val PREF_KEY_APP_CUSTOMER_FULL_NAME = "PREF_KEY_APP_CUSTOMER_FULL_NAME"
+    private val PREF_KEY_APP_CUSTOMER_WEIGHT = "PREF_KEY_APP_CUSTOMER_WEIGHT"
+    private val PREF_KEY_APP_CUSTOMER_HEIGHT = "PREF_KEY_APP_CUSTOMER_HEIGHT"
+    private val PREF_KEY_APP_CUSTOMER_MOBILE_NUMBER = "PREF_KEY_APP_CUSTOMER_MOBILE_NUMBER"
+    private val PREF_KEY_APP_CUSTOMER_GENDER = "PREF_KEY_APP_CUSTOMER_GENDER"
+    private val PREF_KEY_APP_CUSTOMER_EMAIL = "PREF_KEY_APP_CUSTOMER_EMAIL"
+    private val PREF_KEY_APP_CUSTOMER_SOCIAL_NETWORK = "PREF_KEY_APP_CUSTOMER_SOCIAL_NETWORK"
+    private val PREF_KEY_APP_CUSTOMER_SOCIAL_NETWORK_ID = "PREF_KEY_APP_CUSTOMER_SOCIAL_NETWORK_ID"
     private val PREF_KEY_APP_CUSTOMER_NOTIFY_REMAINDER = "PREF_KEY_APP_CUSTOMER_NOTIFY_REMAINDER"
     private val PREF_KEY_APP_CUSTOMER_USER_NAME = "PREF_KEY_APP_CUSTOMER_USER_NAME"
     private val PREF_KEY_APP_CUSTOMER_UNITS = "PREF_KEY_APP_CUSTOMER_UNITS"
@@ -74,7 +79,7 @@ class AppPreferencesHelper(context: Context) : PreferencesHelper {
 
 
     override fun isLoggedIn(): Boolean? {
-        return  mPrefs.getBoolean(PREF_KEY_USER_LOGGED_IN_MODE,false)
+        return mPrefs.getBoolean(PREF_KEY_USER_LOGGED_IN_MODE, false)
     }
 
     override fun setRememberMe(email: String, pwd: String) {
@@ -96,34 +101,46 @@ class AppPreferencesHelper(context: Context) : PreferencesHelper {
         return param
     }
 
+    override fun setLoginInfo(userInfo: LoginInfo) {
+        mPrefs.edit().putString(PREF_KEY_APP_ACCESS_TOKEN, userInfo.access_token).apply()
+        mPrefs.edit().putString(PREF_KEY_APP_REFRESH_TOKEN, userInfo.refresh_token).apply()
+
+    }
+
+    override fun getLoginInfo(): LoginInfo {
+        val loginInfo = LoginInfo(
+                mPrefs.getString(PREF_KEY_APP_ACCESS_TOKEN, ""),
+                mPrefs.getString(PREF_KEY_APP_REFRESH_TOKEN, ""))
+        return loginInfo
+    }
 
     override fun getUserInfo(): UserInfoBean {
         val userInfo = UserInfoBean(
-            mPrefs.getString(PREF_KEY_APP_IS_ADMIN, ""),
-            mPrefs.getString(PREF_KEY_APP_CUSTOMER_ID, ""),
-            mPrefs.getString(PREF_KEY_APP_CUSTOMER_PROFILE_IMAGE, ""),
-            mPrefs.getString(PREF_KEY_APP_CUSTOMER_AUTH_TOKEN, ""),
-            mPrefs.getString(PREF_KEY_APP_CUSTOMER_EMAIL_VARIFIED, ""),
-            mPrefs.getString(PREF_KEY_APP_CUSTOMER_STATUS, ""),
-            mPrefs.getString(PREF_KEY_APP_CUSTOMER_NOTIFICATION, ""),
-            mPrefs.getString(PREF_KEY_APP_CUSTOMER_FULL_NAME, ""),
-            mPrefs.getString(PREF_KEY_APP_CUSTOMER_WEIGHT, ""),
-            mPrefs.getString(PREF_KEY_APP_CUSTOMER_HEIGHT, ""),
-            mPrefs.getString(PREF_KEY_APP_CUSTOMER_MOBILE_NUMBER, ""),
-            mPrefs.getString(PREF_KEY_APP_CUSTOMER_GENDER, ""),
-            mPrefs.getString(PREF_KEY_APP_CUSTOMER_EMAIL, ""),
-            mPrefs.getString(PREF_KEY_APP_CUSTOMER_SOCIAL_NETWORK, ""),
-            mPrefs.getString(PREF_KEY_APP_CUSTOMER_SOCIAL_NETWORK_ID, ""),
-            mPrefs.getString(PREF_KEY_APP_CUSTOMER_NOTIFY_REMAINDER, ""),
-            mPrefs.getString(PREF_KEY_APP_CUSTOMER_USER_NAME, ""),
-            mPrefs.getString(PREF_KEY_APP_CUSTOMER_UNITS, ""),
-            mPrefs.getString(PREF_KEY_APP_CUSTOMER_COUNTRY_ID, ""),
-            mPrefs.getString(PREF_KEY_APP_CUSTOMER_COUNTRY_NAME, ""),
-            mPrefs.getString(PREF_KEY_APP_CUSTOMER_ISD_CODE, ""),
-            mPrefs.getString(PREF_KEY_APP_CUSTOMER_NOTIFICATION_STATUS, ""),
-            mPrefs.getString(PREF_KEY_APP_CUSTOMER_DOB, ""),
-            mPrefs.getString(PREF_KEY_APP_CUSTOMER_TITLE, ""),
-            mPrefs.getString(PREF_KEY_APP_CUSTOMER_IS_SUBSCRIBED, ""))
+                mPrefs.getString(PREF_KEY_APP_IS_ADMIN, ""),
+                mPrefs.getString(PREF_KEY_APP_CUSTOMER_ID, ""),
+                mPrefs.getString(PREF_KEY_APP_CUSTOMER_PROFILE_IMAGE, ""),
+                mPrefs.getString(PREF_KEY_APP_CUSTOMER_AUTH_TOKEN, ""),
+                mPrefs.getString(PREF_KEY_APP_CUSTOMER_EMAIL_VARIFIED, ""),
+                mPrefs.getString(PREF_KEY_APP_CUSTOMER_STATUS, ""),
+                mPrefs.getString(PREF_KEY_APP_CUSTOMER_NOTIFICATION, ""),
+                mPrefs.getString(PREF_KEY_APP_CUSTOMER_FULL_NAME, ""),
+                mPrefs.getString(PREF_KEY_APP_CUSTOMER_WEIGHT, ""),
+                mPrefs.getString(PREF_KEY_APP_CUSTOMER_HEIGHT, ""),
+                mPrefs.getString(PREF_KEY_APP_CUSTOMER_MOBILE_NUMBER, ""),
+                mPrefs.getString(PREF_KEY_APP_CUSTOMER_GENDER, ""),
+                mPrefs.getString(PREF_KEY_APP_CUSTOMER_EMAIL, ""),
+                mPrefs.getString(PREF_KEY_APP_CUSTOMER_SOCIAL_NETWORK, ""),
+                mPrefs.getString(PREF_KEY_APP_CUSTOMER_SOCIAL_NETWORK_ID, ""),
+                mPrefs.getString(PREF_KEY_APP_CUSTOMER_NOTIFY_REMAINDER, ""),
+                mPrefs.getString(PREF_KEY_APP_CUSTOMER_USER_NAME, ""),
+                mPrefs.getString(PREF_KEY_APP_CUSTOMER_UNITS, ""),
+                mPrefs.getString(PREF_KEY_APP_CUSTOMER_COUNTRY_ID, ""),
+                mPrefs.getString(PREF_KEY_APP_CUSTOMER_COUNTRY_NAME, ""),
+                mPrefs.getString(PREF_KEY_APP_CUSTOMER_ISD_CODE, ""),
+                mPrefs.getString(PREF_KEY_APP_CUSTOMER_NOTIFICATION_STATUS, ""),
+                mPrefs.getString(PREF_KEY_APP_CUSTOMER_DOB, ""),
+                mPrefs.getString(PREF_KEY_APP_CUSTOMER_TITLE, ""),
+                mPrefs.getString(PREF_KEY_APP_CUSTOMER_IS_SUBSCRIBED, ""))
 
         return userInfo
     }
@@ -135,7 +152,7 @@ class AppPreferencesHelper(context: Context) : PreferencesHelper {
         mPrefs.edit().putString(PREF_KEY_APP_CUSTOMER_PROFILE_IMAGE, userInfo.customer_profile_image).apply()
         mPrefs.edit().putString(PREF_KEY_APP_CUSTOMER_AUTH_TOKEN, userInfo.customer_auth_token).apply()
         mPrefs.edit().putString(PREF_KEY_APP_CUSTOMER_EMAIL_VARIFIED, userInfo.customer_email_verified).apply()
-        mPrefs.edit().putString(PREF_KEY_APP_CUSTOMER_STATUS    , userInfo.customer_status).apply()
+        mPrefs.edit().putString(PREF_KEY_APP_CUSTOMER_STATUS, userInfo.customer_status).apply()
         mPrefs.edit().putString(PREF_KEY_APP_CUSTOMER_NOTIFICATION, userInfo.customer_notification).apply()
         mPrefs.edit().putString(PREF_KEY_APP_CUSTOMER_FULL_NAME, userInfo.customer_full_name).apply()
         mPrefs.edit().putString(PREF_KEY_APP_CUSTOMER_WEIGHT, userInfo.customer_weight).apply()

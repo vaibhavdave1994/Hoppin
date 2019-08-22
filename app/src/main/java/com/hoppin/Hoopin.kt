@@ -4,6 +4,8 @@ package com.hoppin
  * Created by Ravi Birla on 27,June,2019
  */
 import android.app.Application
+import android.util.Log
+import com.hoppin.activity.ui.authantication.otpmessage.AppSignatureHelper
 import com.hoppin.data.AppDataManager
 
 class Hoopin : Application() {
@@ -11,6 +13,7 @@ class Hoopin : Application() {
         super.onCreate()
         instance = this
         dataManager1 = AppDataManager.getAppDataManager(this)
+        Log.e("testcode",AppSignatureHelper(this).appSignatures.toString())
     }
 
     companion object {

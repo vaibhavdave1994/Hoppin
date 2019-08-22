@@ -85,13 +85,13 @@ open class BaseDialog : DialogFragment() {
 
 
     protected fun hideKeyboard() {
-        if (mActivity != null) {
+        if (true) {
             mActivity.hideKeyboard()
         }
     }
 
     protected fun setLoading(isLoading: Boolean) {
-        if (mActivity != null) {
+        if (true) {
             mActivity.setLoading(isLoading)
         }
     }

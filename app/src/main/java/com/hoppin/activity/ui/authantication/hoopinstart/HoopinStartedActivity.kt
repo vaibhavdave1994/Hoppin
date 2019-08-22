@@ -20,6 +20,7 @@ import kotlinx.android.synthetic.main.activity_hoopin_started.*
 
 class HoopinStartedActivity : BaseActivity(), View.OnClickListener {
 
+    private var isselected: Boolean = true
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
@@ -46,25 +47,19 @@ class HoopinStartedActivity : BaseActivity(), View.OnClickListener {
         when (view?.id) {
 
             R.id.btn_signin -> {
-                btn_signin.background = ContextCompat.getDrawable(this, R.drawable.app_btn)
-                btn_signup.background = ContextCompat.getDrawable(this, R.drawable.transperent_btn)
-                btn_signin.setTextColor(ContextCompat.getColor(this, R.color.colorWhite))
-                btn_signup.setTextColor(ContextCompat.getColor(this, R.color.colorGray1))
-                intent = Intent(this@HoopinStartedActivity,LoginActivity::class.java)
+                isselected = true
+                intent = Intent(this@HoopinStartedActivity, LoginActivity::class.java)
                 startActivity(intent)
             }
             R.id.btn_signup -> {
+                isselected = false
 
-                btn_signin.background = ContextCompat.getDrawable(this, R.drawable.transperent_btn)
-                btn_signup.background = ContextCompat.getDrawable(this, R.drawable.app_btn)
-                btn_signin.setTextColor(ContextCompat.getColor(this, R.color.colorGray1))
-                btn_signup.setTextColor(ContextCompat.getColor(this, R.color.colorWhite))
-                intent = Intent(this@HoopinStartedActivity,SignUpActivity::class.java)
+                intent = Intent(this@HoopinStartedActivity, SignUpActivity::class.java)
                 startActivity(intent)
             }
-            R.id.rl_facebook ->{
+            R.id.rl_facebook -> {
 
-                intent = Intent(this@HoopinStartedActivity,TabActivity ::class.java)
+                intent = Intent(this@HoopinStartedActivity, TabActivity::class.java)
                 startActivity(intent)
                 finish()
             }
@@ -100,6 +95,23 @@ class HoopinStartedActivity : BaseActivity(), View.OnClickListener {
             return IntroModel.values().size
         }
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        if (isselected) {
+            btn_signin.background = ContextCompat.getDrawable(this, R.drawable.button)
+            btn_signup.background = ContextCompat.getDrawable(this, R.drawable.button_white)
+            btn_signin.setTextColor(ContextCompat.getColor(this, R.color.colorWhite))
+            btn_signup.setTextColor(ContextCompat.getColor(this, R.color.colorGray1))
+
+        } else {
+            btn_signin.background = ContextCompat.getDrawable(this, R.drawable.button_white)
+            btn_signup.background = ContextCompat.getDrawable(this, R.drawable.button)
+            btn_signin.setTextColor(ContextCompat.getColor(this, R.color.colorGray1))
+            btn_signup.setTextColor(ContextCompat.getColor(this, R.color.colorWhite))
+        }
     }
 }
 

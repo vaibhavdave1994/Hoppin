@@ -7,218 +7,25 @@
     android:orientation="vertical"
     tools:context=".activity.hoopActivity.HoopDetailActivity">
 
-
     <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scrollbars="none">
+        android:layout_width="match_parent"
+         android:scrollbars="none"
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_80sdp"
-                    android:layout_marginEnd="@dimen/_10sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginTop="-10dp"
-                    android:layout_below="@+id/image"
-                    android:background="@drawable/detail_image"
-                    android:orientation="horizontal">
-
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            style="@style/RubikMediumStyleSize10"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:text="@string/start_date"
-                            android:textColor="@color/colorBlack1"
-                            tools:ignore="RtlCompat" />
-
-                        <TextView
-                            style="@style/RubikLightStyleSize10"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="@dimen/_10sdp"
-                            android:gravity="center"
-                            android:text="25 May 2019, 03:50 PM"
-                            android:textColor="@color/colorGray"
-                            tools:ignore="RtlCompat" />
-
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="@dimen/_30sdp"
-                        android:layout_gravity="center"
-                        android:background="@color/colorLight2" />
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            style="@style/RubikMediumStyleSize10"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:text="@string/end_date"
-                            android:textColor="@color/colorBlack1"
-                            tools:ignore="RtlCompat" />
-
-                        <TextView
-                            style="@style/RubikLightStyleSize10"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="@dimen/_10sdp"
-                            android:gravity="center"
-                            android:text="25 May 2019, 03:50 PM"
-                            android:textColor="@color/colorGray"
-                            tools:ignore="RtlCompat" />
-
-                    </LinearLayout>
-
-
-                </LinearLayout>
-                <RelativeLayout
-                    android:id="@+id/image"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_220sdp">
-
-
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/_220sdp"
-                        android:background="@drawable/gradiant"/>
-
-                    <com.hoppin.helper.RoundUpperCornerImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/_220sdp"
-                        android:scaleType="fitXY"
-                        app:srcCompat="@drawable/ic_party_image6" />
-
-
-
-
-                    <LinearLayout
-                        android:id="@+id/li_address"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginBottom="@dimen/_20sdp"
-                        android:layout_marginStart="@dimen/_20sdp"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="@dimen/_12sdp"
-                            android:layout_height="@dimen/_12sdp"
-                            android:layout_gravity="center"
-                            app:srcCompat="@drawable/ic_placeholder" />
-
-                        <TextView
-                            style="@style/RubikLightItalicStyle13"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"
-                            android:text="7202 State Lane Bethesda, MD 20814"
-                            android:textColor="@color/colorWhite"
-                            tools:ignore="RtlCompat" />
-
-
-                    </LinearLayout>
-
-                    <TextView
-                        android:id="@+id/tv_title"
-                        style="@style/RubikBoldStyleSize18"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_above="@+id/li_address"
-                        android:layout_marginBottom="@dimen/_10sdp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginStart="@dimen/_20sdp"
-                        android:text="Birthday Party Celebration"
-                        android:textColor="@color/colorWhite"
-                        tools:ignore="RtlCompat" />
-
-                </RelativeLayout>
-
-
-
-            </RelativeLayout>
-
-
-            <TextView
-                style="@style/RubikMediumStyleSize10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:text="@string/guest_invited"
-                android:textColor="@color/colorBlack1"
-                tools:ignore="RtlCompat" />
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recycler_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_5sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:orientation="horizontal"
-                android:scrollbars="none" />
-
-
-            <TextView
-                style="@style/RubikMediumStyleSize10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:text="@string/description1"
-                android:textColor="@color/colorBlack1"
-                tools:ignore="RtlCompat" />
-
-            <TextView
-                android:id="@+id/tv_description"
-                style="@style/RubikLightStyleSize10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_10sdp"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:gravity="start"
-                android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard..See More"
-                android:textColor="@color/colorGray"
-                tools:ignore="RtlCompat" />
-
+            <include android:id="@+id/include"
+                layout="@layout/detail_layout"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/include"
                 android:layout_marginBottom="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_20sdp"
                 android:orientation="horizontal">
@@ -342,10 +149,11 @@
                 </LinearLayout>
             </LinearLayout>
 
-        </LinearLayout>
 
-
+        </RelativeLayout>
     </ScrollView>
+
+
 
     <RelativeLayout
         android:id="@+id/rlheader"
@@ -371,5 +179,7 @@
 
 
     </RelativeLayout>
+
+
 
 </RelativeLayout>

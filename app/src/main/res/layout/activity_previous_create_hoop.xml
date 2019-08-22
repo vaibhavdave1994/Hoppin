@@ -58,7 +58,7 @@
         android:layout_marginEnd="@dimen/_20sdp"
         android:layout_marginStart="@dimen/_20sdp"
         android:layout_marginTop="@dimen/_10sdp"
-        android:background="@drawable/app_btn"
+        android:background="@drawable/button"
         android:text="@string/done"
         android:textColor="@color/colorWhite" />
 

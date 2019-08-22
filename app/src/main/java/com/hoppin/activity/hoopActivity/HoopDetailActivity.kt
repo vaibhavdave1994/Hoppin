@@ -1,5 +1,6 @@
 package com.hoppin.activity.hoopActivity
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.v4.text.HtmlCompat
 import android.support.v7.widget.LinearLayoutManager
@@ -13,6 +14,8 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Environment
 import android.os.Environment.getExternalStorageDirectory
+import android.support.v4.content.ContextCompat
+import kotlinx.android.synthetic.main.detail_layout.*
 import java.io.File
 
 
@@ -29,6 +32,7 @@ class HoopDetailActivity : BaseActivity(),View.OnClickListener {
 
     }
 
+    @SuppressLint("NewApi")
     fun inItView() {
         iv_back.setOnClickListener(this)
         rl_share.setOnClickListener(this)
@@ -46,6 +50,9 @@ class HoopDetailActivity : BaseActivity(),View.OnClickListener {
         recycler_view.layoutManager = mLayoutManager
         //addprop_recycler_view.setItemAnimator(new DefaultItemAnimator());
         recycler_view.adapter = detailGuestAdapter
+
+
+
     }
 
     override fun onClick(p0: View) {

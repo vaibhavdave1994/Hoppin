@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.hoopActivity.HoopDetailActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        tools:ignore="UselessParent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/include"
+                layout="@layout/detail_layout" />
+
+
+            <RelativeLayout
+                android:id="@+id/rl_timer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/include"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_centerHorizontal="true">
+
+                <TextView
+                    android:id="@+id/tv_starttime"
+                    style="@style/RubikMediumStyleSize11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:text="@string/hoop_start_in"
+                    android:textColor="@color/colorBlack1"
+                    tools:ignore="RtlCompat,UnusedAttribute" />
+
+                <LinearLayout
+                    android:id="@+id/ll_timer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_starttime"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_day"
+                            style="@style/RubikMediumStyleSize12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="02"
+                            android:textColor="@color/colorBlack1"
+                            tools:ignore="RtlCompat,UnusedAttribute" />
+
+                        <TextView
+                            style="@style/RubikLightStyleSize10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/days"
+                            android:textColor="@color/colorGray"
+                            tools:ignore="RtlCompat,UnusedAttribute" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_hour"
+                            style="@style/RubikMediumStyleSize12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="10"
+                            android:textColor="@color/colorBlack1"
+                            tools:ignore="RtlCompat,UnusedAttribute" />
+
+                        <TextView
+                            style="@style/RubikLightStyleSize10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/hours"
+                            android:textColor="@color/colorGray"
+                            tools:ignore="RtlCompat,UnusedAttribute" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_min"
+                            style="@style/RubikMediumStyleSize12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="30"
+                            android:textColor="@color/colorBlack1"
+                            tools:ignore="RtlCompat,UnusedAttribute" />
+
+                        <TextView
+                            style="@style/RubikLightStyleSize10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/min"
+                            android:textColor="@color/colorGray"
+                            tools:ignore="RtlCompat,UnusedAttribute" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_starttime"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="-18dp"
+                    android:layout_toEndOf="@+id/ll_timer">
+
+
+                    <!--<com.bcgdv.asia.lib.ticktock.TickTockView
+                        android:id="@+id/mCountDown"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        app:tickCircleDuration="total_time"
+                        android:layout_gravity="center_horizontal" />
+
+-->
+                    <com.bcgdv.asia.lib.ticktock.TickTockView
+                        android:id="@+id/mCountDown"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:layout_gravity="center_horizontal"
+                        app:tickAutoFitText="true"
+                        app:tickMiddleColor="#fff"
+                        app:tickMoveCounterClockwise="false"
+                        app:tickTextColor="@color/colorBlack"
+                        app:tickDotRadius="5dp"
+                        app:tickEmptyRingColor="@color/colorGray"
+                        app:tickFillRingColor="@color/colorGreen"
+                        app:tickRingThickness="1dp" />
+
+                    <ImageView
+                        android:id="@+id/image7"
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_centerInParent="true"
+                        app:srcCompat="@drawable/ic_damru" />
+
+
+                    <!-- <hiennguyen.me.circleseekbar.CircleSeekBar
+                         android:id="@+id/circleSeekBar"
+                         android:layout_width="@dimen/_80sdp"
+                         android:layout_height="@dimen/_70sdp"
+                         android:padding="@dimen/_15sdp"
+                         app:csb_arcColor="@color/colorGray6"
+                         app:csb_arcWidth="2dp"
+                         app:csb_isShowText="false"
+                         app:csb_step="1"
+                         app:csb_progressColor="@color/colorGreen"
+                         app:csb_progressWidth="2dp"
+                         app:csb_textColor="@color/colorGreen"
+                         app:csb_textSize="16sp"
+                         app:csb_thumbDrawable="@drawable/ic_dot"
+                         app:csb_thumbSize="16dp" />-->
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/rl_timer"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        style="@style/RubikLightStyleSize10"
+                        android:layout_width="@dimen/_55sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:background="@drawable/start_corner"
+                        android:gravity="center"
+                        android:text="@string/hoop_in"
+                        android:textColor="@color/colorWhite"
+                        tools:ignore="RtlCompat" />
+
+                    <RelativeLayout
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:background="@drawable/end_corner">
+
+                        <ImageView
+                            android:layout_width="@dimen/_12sdp"
+                            android:layout_height="@dimen/_12sdp"
+                            android:layout_centerInParent="true"
+                            android:tint="@color/colorWhite"
+                            app:srcCompat="@drawable/ic_in_out" />
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+
+
+
+                <LinearLayout
+                    android:id="@+id/rl_share"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        style="@style/RubikLightStyleSize10"
+                        android:layout_width="@dimen/_55sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:background="@drawable/start_corner"
+                        android:backgroundTint="@color/colorOrange"
+                        android:gravity="center"
+                        android:text="@string/hoop_out"
+                        android:textColor="@color/colorWhite"
+                        tools:ignore="RtlCompat,UnusedAttribute" />
+
+                    <RelativeLayout
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:background="@drawable/end_corner"
+                        android:backgroundTint="@color/colorDarkOrange1"
+                        tools:ignore="UnusedAttribute">
+
+                        <ImageView
+                            android:layout_width="@dimen/_12sdp"
+                            android:layout_height="@dimen/_12sdp"
+                            android:layout_centerInParent="true"
+                            android:tint="@color/colorWhite"
+                            app:srcCompat="@drawable/ic_in_out" />
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/rlheader"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:tint="@color/colorWhite"
+            app:srcCompat="@drawable/ic_arrow_pointing_to_right" />
+
+        <TextView
+            style="@style/RubikMediumStyleSize16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/hoop_detail"
+            android:textColor="@color/colorWhite" />
+
+
+    </RelativeLayout>
+</RelativeLayout>
